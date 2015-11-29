@@ -1,0 +1,37 @@
+body {
+  background-color: #f7f5fa;
+  padding: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: lighter;
+}
+
+.profile-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.m0 {
+  margin: 0;
+}
+
+.mt0 {
+  margin-top: 0;
+}
+
+.mb10 {
+  margin-bottom: 10px;
+}
+
+.profile-avatar-wrapper {
+  margin-right: 15px;
+}
+
+.profile-avatar-wrapper, .profile-bio {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+p {
+  margin: 0;
+}

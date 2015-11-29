@@ -1,0 +1,24 @@
+{
+  "name": "maaz",
+  "authors": [
+    "mudassir0909 <mudassir.dev@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "c3": "~0.4.10",
+    "bootstrap": "~3.3.6",
+    "underscore": "~1.8.3"
+  }
+}
