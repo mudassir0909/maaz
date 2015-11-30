@@ -110,8 +110,6 @@ class @App
         tooltip: tooltip,
         icon_type: icon_type
 
-      debugger
-
       $panels_container.append(html)
 
       c3.generate
