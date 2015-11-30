@@ -10,17 +10,72 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
+        <style>
+            .spinner {
+              width: 40px;
+              height: 40px;
+              background-color: white;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              margin-top: -20px;
+              margin-left: -20px;
+
+              -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+              animation: sk-rotateplane 1.2s infinite ease-in-out;
+            }
+
+            @-webkit-keyframes sk-rotateplane {
+              0% { -webkit-transform: perspective(120px) }
+              50% { -webkit-transform: perspective(120px) rotateY(180deg) }
+              100% { -webkit-transform: perspective(120px) rotateY(180deg)  rotateX(180deg) }
+            }
+
+            @keyframes sk-rotateplane {
+              0% { 
+                transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg) 
+              } 50% { 
+                transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+                -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg) 
+              } 100% { 
+                transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+                -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+              }
+            }
+
+            body.loading {
+                background-color: rgb(125, 114, 191);
+            }
+
+            body.loading .spinner {
+                display: block;
+            }
+
+            body.loading .container-main {
+                display: none;
+            }
+
+            body .spinner {
+                display: none;
+            }
+
+            body .container-main {
+                display: block;
+            }
+        </style>
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="static/stylesheets/app.css" >
     </head>
 
-    <body>
+    <body class="loading">
+        <div class="spinner"></div>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div class="container-fluid">
+        <div class="container-fluid container-main">
           <div class="row-fluid clearfix">
             <div class="col-md-6 col-md-offset-3" id="panels-container">
               <div class="panel panel-default">
@@ -57,6 +112,7 @@
         <script src="static/js/app.js"></script>
         <script>
           window.onload = function() {
+            $("body").removeClass('loading');
             App.init();
             App.render();
           };
