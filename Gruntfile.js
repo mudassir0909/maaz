@@ -105,6 +105,8 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   // Default task.
-  grunt.registerTask('default', ['coffee', 'concat', 'less', 'copy', 'watch']);
+  grunt.registerTask('default', ['coffee', 'concat', 'less', 'copy']);
+  grunt.registerTask('init', ['default', 'watch']);
+  grunt.registerTask('build', ['clean', 'default', 'cssmin', 'uglify', 'cacheBust'])
 
 };
