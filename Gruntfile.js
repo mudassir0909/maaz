@@ -78,8 +78,11 @@ module.exports = function(grunt) {
       }
     },
     clean: {
-      build: {
+      pre_build: {
         src: ['static/js/*.js', 'static/stylesheets/*.css']
+      },
+      post_build: {
+        src: ['static/js/app.js', 'static/js/vendor.js', 'static/js/app.min.js', 'static/js/vendor.min.js']
       }
     },
     copy: {
@@ -107,6 +110,6 @@ module.exports = function(grunt) {
   // Default task.
   grunt.registerTask('default', ['coffee', 'concat', 'less', 'copy']);
   grunt.registerTask('init', ['default', 'watch']);
-  grunt.registerTask('build', ['clean', 'default', 'cssmin', 'uglify', 'cacheBust'])
+  grunt.registerTask('build', ['clean:pre_build', 'default', 'cssmin', 'uglify', 'cacheBust', 'clean:post_build'])
 
 };
