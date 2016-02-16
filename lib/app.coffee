@@ -10,7 +10,7 @@ class @App
     @recordResults('Quarterly', [8, 8, 7, 7, 5, 7])
     @recordResults('Formative Assessment 3', [9, 9, 8, 7, 8 ,9])
     @recordResults('Half Yearly', [9, 7, 7, 5, 9 ,9])
-    @recordResults('Formative Assessment 4', [8, 9, 8, 8, 8, 9])
+    @recordResults('Formative Assessment 4', [9, 9, 8, 8, 8, 9])
 
   @render: ->
     @renderGPA()
